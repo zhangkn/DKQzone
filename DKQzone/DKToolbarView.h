@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DKToolbarView.h
 //  DKQzone
 //
 //  Created by devzkn on 17/12/2016.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DKToolbarView : UIView
 
 @end
-
