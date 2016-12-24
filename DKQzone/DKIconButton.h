@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DKIconButton : UIButton
+@property (assign, nonatomic) DKScreenOrientation screenOrientation;
 
 @end

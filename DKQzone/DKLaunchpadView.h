@@ -8,15 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-
-typedef enum : NSUInteger {
-    /**
-     *竖屏
-     */
-    ScreenPortrait,
-    
-    ScreenLandscape,
-} DKScreenOrientation;
+//typedef enum : NSUInteger {
+//    /**
+//     *竖屏
+//     */
+//    ScreenPortrait,
+//    
+//    ScreenLandscape,
+//} DKScreenOrientation;
 
 @interface DKLaunchpadView : UIView
 

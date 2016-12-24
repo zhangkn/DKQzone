@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DKTabbarView : UIView
+@property (assign, nonatomic) DKScreenOrientation screenOrientation;
 
 @end

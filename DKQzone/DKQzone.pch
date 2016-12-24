@@ -15,4 +15,13 @@
 #import "UIView+Extension.h"
 
 
+typedef enum : NSUInteger {
+    /**
+     *竖屏
+     */
+    ScreenPortrait,
+    
+    ScreenLandscape,
+} DKScreenOrientation;
+
 #endif /* DKQzone_pch */

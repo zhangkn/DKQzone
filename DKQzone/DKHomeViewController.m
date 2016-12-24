@@ -31,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor grayColor];
     //设置launchpadView size
     [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
     

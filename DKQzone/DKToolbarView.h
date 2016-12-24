@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DKToolbarView : UIView
+@property (assign, nonatomic) DKScreenOrientation screenOrientation;
 
 
 

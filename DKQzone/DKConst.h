@@ -15,5 +15,3 @@
 extern const CGFloat DKLaunchpadViewPortraitWidth;
 
 extern const CGFloat DKLaunchpadViewLandscapeWidth;
-
-

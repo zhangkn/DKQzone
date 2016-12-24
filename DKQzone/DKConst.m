@@ -15,4 +15,3 @@ const CGFloat DKLaunchpadViewPortraitWidth = 70;
 
 const CGFloat DKLaunchpadViewLandscapeWidth = (DKLaunchpadViewPortraitWidth*3);
 
-

@@ -84,7 +84,46 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     //计算子控件的frame
-    
+   
+
+    //根据横竖屏 来进行调整子控件的frame
+    switch (self.screenOrientation) {
+        case ScreenLandscape:{
+            CGFloat width = self.width/3;
+            CGFloat height = self.height;
+            self.moodBtn.x = 0;
+            self.photoBtn.x = width;
+            self.blogBtn.x = width*2;
+            self.moodBtn.width = width;
+            self.photoBtn.width = width;
+            self.blogBtn.width = width;
+            self.moodBtn.height = height;
+            self.blogBtn.height = height;
+            self.photoBtn.height = height;
+            self.photoBtn.y = 0;
+            self.moodBtn.y = 0;
+            self.blogBtn.y = 0;
+        }
+            break;
+            
+        case ScreenPortrait:{
+            CGFloat width = self.width;
+            CGFloat height = self.height/3;
+            self.photoBtn.x = 0;
+            self.moodBtn.x = 0;
+            self.blogBtn.x = 0;
+            self.moodBtn.y = 0;
+            self.photoBtn.y = height;
+            self.blogBtn.y = height*2;
+            self.moodBtn.width = width;
+            self.photoBtn.width = width;
+            self.blogBtn.width = width;
+            self.moodBtn.height = height;
+            self.blogBtn.height = height;
+            self.photoBtn.height = height;            
+        }
+            break;
+    }
 }
 
 
