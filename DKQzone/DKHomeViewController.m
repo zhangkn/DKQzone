@@ -8,9 +8,7 @@
 
 #import "DKHomeViewController.h"
 #import "DKLaunchpadView.h"
-const CGFloat DKLaunchpadViewPortraitWidth = 150;
-const CGFloat DKLaunchpadViewLandscapeWidth = (DKLaunchpadViewPortraitWidth*2);
-
+#import "DKConst.h"
 
 
 @interface DKHomeViewController ()
@@ -34,27 +32,47 @@ const CGFloat DKLaunchpadViewLandscapeWidth = (DKLaunchpadViewPortraitWidth*2);
 - (void)viewDidLoad {
     [super viewDidLoad];
     //设置launchpadView size
-    self.launchpadView.height = self.view.height;
     [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
-//    self.launchpadView.width = 150;
-    // Do any additional setup after loading the view.
+    
+//    [self viewWillTransitionToSize:<#(CGSize)#> withTransitionCoordinator:<#(nonnull id<UIViewControllerTransitionCoordinator>)#>]
 }
 
+
+//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+//    self.launchpadView.height = size.height;
+//    self.launchpadView.width = ;
+//}
+
+
+
+#if 1
+/** 过期的方法*/
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
 
     //根据toInterfaceOrientation 控制launchpadView的宽高
     if(UIInterfaceOrientationIsLandscape(toInterfaceOrientation)){
         //横屏处理
         self.launchpadView.width = DKLaunchpadViewLandscapeWidth;
-//        self.launchpadView.height = [UIScreen mainScreen].bounds.size.height;
+        self.launchpadView.screenOrientation = ScreenLandscape;
     }else{
         self.launchpadView.width = DKLaunchpadViewPortraitWidth;
-//        self.launchpadView.height = [UIScreen mainScreen].bounds.size.width;
-        
+        self.launchpadView.screenOrientation = ScreenPortrait;
     }
 
-    
-    
 }
+
+#endif
+
+/**
+ *布局子控件的frame
+ */
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    self.launchpadView.height = self.view.height;
+}
+
+
+
+
 
 @end

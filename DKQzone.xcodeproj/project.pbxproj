@@ -15,6 +15,7 @@
 		E10278D21E05581400AA15A1 /* DKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10278D11E05581400AA15A1 /* DKHomeViewController.m */; };
 		E10278D61E05588800AA15A1 /* DKLaunchpadView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10278D51E05588800AA15A1 /* DKLaunchpadView.m */; };
 		E10278DC1E055C0100AA15A1 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E10278DB1E055C0100AA15A1 /* UIView+Extension.m */; };
+		E16E828B1E0A713F00AFA203 /* DKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E828A1E0A713F00AFA203 /* DKConst.m */; };
 		E1A8F57A1E0567370084B782 /* DKIconButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A8F5791E0567370084B782 /* DKIconButton.m */; };
 		E1A8F57D1E0567770084B782 /* DKTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A8F57C1E0567770084B782 /* DKTabbarView.m */; };
 		E1A8F5801E0567880084B782 /* DKToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A8F57F1E0567880084B782 /* DKToolbarView.m */; };
@@ -36,6 +37,8 @@
 		E10278D71E055AEE00AA15A1 /* DKQzone.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKQzone.pch; sourceTree = "<group>"; };
 		E10278DA1E055C0100AA15A1 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		E10278DB1E055C0100AA15A1 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		E16E82891E0A713F00AFA203 /* DKConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKConst.h; sourceTree = "<group>"; };
+		E16E828A1E0A713F00AFA203 /* DKConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKConst.m; sourceTree = "<group>"; };
 		E1A8F5781E0567370084B782 /* DKIconButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKIconButton.h; sourceTree = "<group>"; };
 		E1A8F5791E0567370084B782 /* DKIconButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKIconButton.m; sourceTree = "<group>"; };
 		E1A8F57B1E0567770084B782 /* DKTabbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKTabbarView.h; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		E10278B61E05577200AA15A1 /* DKQzone */ = {
 			isa = PBXGroup;
 			children = (
+				E16E82881E0A70FE00AFA203 /* Common */,
 				E10278D31E05585400AA15A1 /* View */,
 				E10278CE1E0557D400AA15A1 /* Other */,
 				E10278CF1E0557E000AA15A1 /* Control */,
@@ -136,6 +140,15 @@
 				E10278DB1E055C0100AA15A1 /* UIView+Extension.m */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		E16E82881E0A70FE00AFA203 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E16E82891E0A713F00AFA203 /* DKConst.h */,
+				E16E828A1E0A713F00AFA203 /* DKConst.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +227,7 @@
 				E10278DC1E055C0100AA15A1 /* UIView+Extension.m in Sources */,
 				E10278D21E05581400AA15A1 /* DKHomeViewController.m in Sources */,
 				E1A8F57D1E0567770084B782 /* DKTabbarView.m in Sources */,
+				E16E828B1E0A713F00AFA203 /* DKConst.m in Sources */,
 				E10278BC1E05577200AA15A1 /* AppDelegate.m in Sources */,
 				E1A8F57A1E0567370084B782 /* DKIconButton.m in Sources */,
 				E10278D61E05588800AA15A1 /* DKLaunchpadView.m in Sources */,
