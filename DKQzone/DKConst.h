@@ -15,3 +15,7 @@
 extern const CGFloat DKLaunchpadViewPortraitWidth;
 
 extern const CGFloat DKLaunchpadViewLandscapeWidth;
+
+extern NSString *const DidClickDKTabbarButtonNotifaction;
+
+extern NSString *const DKTabbarButtonIndexKey;

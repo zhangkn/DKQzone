@@ -16,6 +16,8 @@
 
 
 typedef enum : NSUInteger {
+    
+    
     /**
      *竖屏
      */
@@ -28,5 +30,8 @@ typedef enum : NSUInteger {
 //RGB 颜色
 #define DKColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define DKColorAlpha(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)*1.0]
+
+#define DKRandomColor  DKColor(arc4random_uniform(255),arc4random_uniform(255),arc4random_uniform(255))
+
 
 #endif /* DKQzone_pch */

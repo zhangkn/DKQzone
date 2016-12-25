@@ -8,6 +8,7 @@
 
 #import "DKTabbarView.h"
 #import "DKTabbarButton.h"
+#import "DKConst.h"
 
 @interface DKTabbarView ()
 
@@ -68,6 +69,14 @@
     self.selectedDKTabbarButton = btn;
     self.selectedDKTabbarButton.enabled = NO;//按钮如果进入highlighted 、disableed 状态，图标默认会变灰色
     
+    //通知监听者
+//    UIKeyboardDidHideNotification
+    
+    // post notification
+    NSDictionary * userInfo = [NSDictionary dictionaryWithObject:@(btn.tag) forKey:DKTabbarButtonIndexKey];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DidClickDKTabbarButtonNotifaction object:self userInfo:userInfo];
+    
+    
 }
 
 - (void)setScreenOrientation:(DKScreenOrientation)screenOrientation{
@@ -89,6 +98,7 @@
         self.subviews[i].x = 0;
         self.subviews[i].y = (height)*i;
         self.subviews[i].height =height;
+        self.subviews[i].tag = i;
     }
     
 }

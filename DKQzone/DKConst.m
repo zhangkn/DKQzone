@@ -15,3 +15,6 @@ const CGFloat DKLaunchpadViewPortraitWidth = 70;
 
 const CGFloat DKLaunchpadViewLandscapeWidth = (DKLaunchpadViewPortraitWidth*3);
 
+NSString *const DidClickDKTabbarButtonNotifaction = @"DidClickDKTabbarButtonNotifaction";
+
+NSString *const DKTabbarButtonIndexKey = @"DKTabbarButtonIndexKey";
