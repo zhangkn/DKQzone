@@ -7,6 +7,15 @@
 //
 
 #import "DKTabbarView.h"
+#import "DKTabbarButton.h"
+
+@interface DKTabbarView ()
+
+@property (nonatomic,strong) DKTabbarButton *selectedDKTabbarButton;
+
+
+
+@end
 
 @implementation DKTabbarView
 
@@ -39,18 +48,35 @@
 /**
  *构件btn
  */
-- (UIButton*)setupButtonWithIconName:(NSString*)iconName  title:(NSString*)title{
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+- (DKTabbarButton*)setupButtonWithIconName:(NSString*)iconName  title:(NSString*)title{
+     DKTabbarButton *btn = [DKTabbarButton buttonWithType:UIButtonTypeCustom];
     [btn setImage:[UIImage imageNamed:iconName] forState:UIControlStateNormal];
-    [btn setBackgroundImage:[UIImage imageNamed:@"tabbar_separate_selected_bg"] forState:UIControlStateNormal];
     [btn setTitle:title forState:UIControlStateNormal];
-    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;//水平方向的对齐方式
-    btn.contentEdgeInsets = UIEdgeInsetsMake(0, 30, 0, 0);//内容切掉左边
-    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 30, 0, 0);//标题切掉左边
+   //    btn.contentEdgeInsets = UIEdgeInsetsMake(0, 30, 0, 0);//内容切掉左边
+//    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 30, 0, 0);//标题切掉左边
 //    btn.imageEdgeInsets =UIEdgeInsetsMake(0, 10, 0, 10);
+    
+    [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchDown];
     [self addSubview:btn];
     return btn;
     
+}
+
+
+- (void)clickBtn:(DKTabbarButton*)btn{
+    self.selectedDKTabbarButton.enabled = YES;
+    self.selectedDKTabbarButton = btn;
+    self.selectedDKTabbarButton.enabled = NO;//按钮如果进入highlighted 、disableed 状态，图标默认会变灰色
+    
+}
+
+- (void)setScreenOrientation:(DKScreenOrientation)screenOrientation{
+    _screenOrientation = screenOrientation;
+    
+    for (int i = 0; i<self.subviews.count; i++) {
+        DKTabbarButton *btn =  self.subviews[i];
+        btn.screenOrientation = self.screenOrientation;
+    }
 }
 
 
@@ -63,7 +89,6 @@
         self.subviews[i].x = 0;
         self.subviews[i].y = (height)*i;
         self.subviews[i].height =height;
-        
     }
     
 }

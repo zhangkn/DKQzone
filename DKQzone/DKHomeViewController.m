@@ -15,6 +15,9 @@
 
 @property (nonatomic,weak) DKLaunchpadView *launchpadView;
 
+
+
+
 @end
 
 @implementation DKHomeViewController
@@ -31,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = DKColor(54, 54, 54);
     //设置launchpadView size
     [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
     

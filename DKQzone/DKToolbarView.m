@@ -74,7 +74,7 @@
 - (UIButton*)setupButtonWithIconName:(NSString*)iconName{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setImage:[UIImage imageNamed:iconName] forState:UIControlStateNormal];
-    [btn setBackgroundImage:[UIImage imageNamed:@"tabbar_separate_selected_bg"] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"tabbar_separate_selected_bg"] forState:UIControlStateDisabled];
     
     return btn;
     

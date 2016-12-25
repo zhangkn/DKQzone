@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E10156101E0F646E0073C14A /* DKTabbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E101560F1E0F646E0073C14A /* DKTabbarButton.m */; };
 		E10278B91E05577200AA15A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E10278B81E05577200AA15A1 /* main.m */; };
 		E10278BC1E05577200AA15A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E10278BB1E05577200AA15A1 /* AppDelegate.m */; };
 		E10278C21E05577200AA15A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10278C01E05577200AA15A1 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E101560E1E0F646E0073C14A /* DKTabbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKTabbarButton.h; sourceTree = "<group>"; };
+		E101560F1E0F646E0073C14A /* DKTabbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKTabbarButton.m; sourceTree = "<group>"; };
 		E10278B41E05577200AA15A1 /* DKQzone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKQzone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10278B81E05577200AA15A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E10278BA1E05577200AA15A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				E1A8F5781E0567370084B782 /* DKIconButton.h */,
 				E1A8F5791E0567370084B782 /* DKIconButton.m */,
 				E1A8F57B1E0567770084B782 /* DKTabbarView.h */,
+				E101560E1E0F646E0073C14A /* DKTabbarButton.h */,
+				E101560F1E0F646E0073C14A /* DKTabbarButton.m */,
 				E1A8F57C1E0567770084B782 /* DKTabbarView.m */,
 				E1A8F57E1E0567880084B782 /* DKToolbarView.h */,
 				E1A8F57F1E0567880084B782 /* DKToolbarView.m */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10156101E0F646E0073C14A /* DKTabbarButton.m in Sources */,
 				E10278DC1E055C0100AA15A1 /* UIView+Extension.m in Sources */,
 				E10278D21E05581400AA15A1 /* DKHomeViewController.m in Sources */,
 				E1A8F57D1E0567770084B782 /* DKTabbarView.m in Sources */,
