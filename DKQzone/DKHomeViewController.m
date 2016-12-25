@@ -98,10 +98,27 @@
 //    vc.view.x = self.launchpadView.width;
 //    vc.view.y = 0;
 
-#warning  使用masonry 进行自动布局 来代替在viewWillLayoutSubviews 进行布局
     
-    
+//    [tmpLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.imgForReason.mas_left).offset(10);
+//        make.top.equalTo(self.imgForReason.mas_top).offset(9);
+//        make.size.mas_equalTo(CGSizeMake(100, 25));
+//        
+//    }];
     [self.view addSubview:vc.view];
+
+#warning  使用masonry 进行自动布局 来代替在viewWillLayoutSubviews 进行布局
+    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {//执行此方法之前 必须先保证vc.view 已经添加到父类
+       
+//        make.width.equalTo(self.view.mas_width).offset(100);//执行Blok//链式编程
+//        make.right.equalTo(self.view.mas_right);
+//        make.height.equalTo(self.view.mas_height);
+        make.width.mas_equalTo(600);
+        make.top.equalTo(self.view.mas_top);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.left.equalTo(self.launchpadView.mas_right);
+    }];
+    
     self.showingUIViewController = vc;
 }
 
