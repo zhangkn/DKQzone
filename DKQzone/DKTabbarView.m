@@ -30,11 +30,10 @@
         //设置子控件的属性
         
         
-        
-        
-        
-        
-        [self setupButtonWithIconName:@"tab_bar_e_album_icon" title:@"album"];
+       DKTabbarButton *firstBtn = [self setupButtonWithIconName:@"tab_bar_e_album_icon" title:@"album"];
+        firstBtn.enabled =NO;
+        self.selectedDKTabbarButton = firstBtn;
+        //通知的发出由主控制器自己解决
         [self setupButtonWithIconName:@"tab_bar_feed_icon" title:@"feed"];
         [self setupButtonWithIconName:@"tab_bar_friend_icon" title:@"friend"];
         [self setupButtonWithIconName:@"tab_bar_passive_feed_icon" title:@"passiveFeed"];
@@ -79,6 +78,13 @@
     
 }
 
+
+//- (void)willMoveToSuperview:(UIView *)newSuperview{
+//    [super willMoveToSuperview:newSuperview];
+//    [self clickBtn:self.subviews[0]];
+//}
+
+
 - (void)setScreenOrientation:(DKScreenOrientation)screenOrientation{
     _screenOrientation = screenOrientation;
     
@@ -99,9 +105,14 @@
         self.subviews[i].y = (height)*i;
         self.subviews[i].height =height;
         self.subviews[i].tag = i;
+        //默认展示第一控制器的触发条件就放在主控制器中
+//        if (i == 0) {//默认选择第一个
+//            [self clickBtn:self.subviews[i]];
+//        }
     }
     
 }
+
 
 
 @end

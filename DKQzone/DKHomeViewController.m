@@ -25,7 +25,9 @@
 
 @implementation DKHomeViewController
 
-
+/**
+ *懒加载的重要优点： 解决代码先后执行顺序的问题
+ */
 - (DKLaunchpadView *)launchpadView{
     if (nil == _launchpadView) {
         DKLaunchpadView *tmpView = [[DKLaunchpadView alloc]init];
@@ -43,6 +45,9 @@
     [self setupLaunchpadView];
     //构件子控制器
     [self setupChildrenVCs];
+    
+    [self swithChildVCWithIndex:0];
+
 }
 
 /**
@@ -83,9 +88,11 @@
     [[NSNotificationCenter defaultCenter ] removeObserver:self];
 }
 
-- (void)didClickDKTabbarButtonNotifaction:(NSNotification*)notification{
-    int  index = [notification.userInfo[DKTabbarButtonIndexKey] intValue];
-    //控制器的切换
+//- (void)viewWillAppear:(BOOL)animated{
+//    [self swithChildVCWithIndex:0];
+//}
+- (void) swithChildVCWithIndex:(int )index{
+    
     // 1.移除原来的控制器
     [self.showingUIViewController.view removeFromSuperview];
     //2.添加对应的控制器
@@ -93,26 +100,26 @@
     //控制vc的view的frame。根据DKScreenOrientation 进行控制
     
     
-//    vc.view.width = 600;
-//    vc.view.height = self.view.height;
-//    vc.view.x = self.launchpadView.width;
-//    vc.view.y = 0;
-
+    //    vc.view.width = 600;
+    //    vc.view.height = self.view.height;
+    //    vc.view.x = self.launchpadView.width;
+    //    vc.view.y = 0;
     
-//    [tmpLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.imgForReason.mas_left).offset(10);
-//        make.top.equalTo(self.imgForReason.mas_top).offset(9);
-//        make.size.mas_equalTo(CGSizeMake(100, 25));
-//        
-//    }];
+    
+    //    [tmpLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.left.equalTo(self.imgForReason.mas_left).offset(10);
+    //        make.top.equalTo(self.imgForReason.mas_top).offset(9);
+    //        make.size.mas_equalTo(CGSizeMake(100, 25));
+    //
+    //    }];
     [self.view addSubview:vc.view];
-
+    
 #warning  使用masonry 进行自动布局 来代替在viewWillLayoutSubviews 进行布局
     [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {//执行此方法之前 必须先保证vc.view 已经添加到父类
-       
-//        make.width.equalTo(self.view.mas_width).offset(100);//执行Blok//链式编程
-//        make.right.equalTo(self.view.mas_right);
-//        make.height.equalTo(self.view.mas_height);
+        
+        //        make.width.equalTo(self.view.mas_width).with.offset(100);//执行Blok//链式编程
+        //        make.right.equalTo(self.view.mas_right);
+        //        make.height.equalTo(self.view.mas_height);
         make.width.mas_equalTo(600);
         make.top.equalTo(self.view.mas_top);
         make.bottom.equalTo(self.view.mas_bottom);
@@ -120,6 +127,13 @@
     }];
     
     self.showingUIViewController = vc;
+
+    
+}
+- (void)didClickDKTabbarButtonNotifaction:(NSNotification*)notification{
+    int  index = [notification.userInfo[DKTabbarButtonIndexKey] intValue];
+    //控制器的切换
+    [self swithChildVCWithIndex:index];
 }
 
 
